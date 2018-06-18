@@ -1,0 +1,67 @@
+//COLOR VARIABLES
+$color-primary: #FDB813;
+$color-primary-dark-1: #C28900;
+$color-primary-dark-2: #8A6200;
+$color-primary-light-1: #FFCB4F;
+$color-primary-light-2: #FFDB8B;
+
+$color-secondary: #7E8083;
+$color-secondary-dark-1: #5C5F64;
+$color-secondary-dark-2: #393E46;
+$color-secondary-light-1: #A7A8A9;
+$color-secondary-light-2: #FCFCFC;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 6rem max-content max-content;
+    grid-template-columns: [left-start] 4rem [left-end] 1fr [main-start] minmax(80rem, max-content) [main-end] 1fr [right-start] 4rem[right-end];
+    grid-row-gap: .4rem;
+}
+
+.settings {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    align-self: center;
+    justify-self: center;
+
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+
+    &__icon {
+        height: 3rem;
+        width: 3rem;
+        fill: $color-secondary;
+    }
+
+    &:hover &__icon {
+        transform: rotate(20deg);
+    }
+}
+
+.content {
+    grid-row: 3 / 4;
+    grid-column: main-start / main-end;
+
+    background-color: $color-primary;
+}
