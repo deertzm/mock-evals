@@ -46,12 +46,12 @@ body {
     border: 0;
     background-color: transparent;
     cursor: pointer;
-    transition: all .2s;
 
     &__icon {
         height: 3rem;
         width: 3rem;
         fill: $color-secondary;
+        transition: all .2s;
     }
 
     &:hover &__icon {
