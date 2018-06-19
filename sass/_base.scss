@@ -33,7 +33,7 @@ body {
 .container {
     display: grid;
     grid-template-rows: 6rem max-content max-content;
-    grid-template-columns: [left-start] 4rem [left-end] 1fr [main-start] minmax(80rem, max-content) [main-end] 1fr [right-start] 4rem[right-end];
+    grid-template-columns: [left-start] 4rem [left-end] 1fr [main-start] minmax(80rem, max-content) [main-end] 1fr [right-start] 4rem [right-end];
     grid-row-gap: .4rem;
 }
 
@@ -55,7 +55,7 @@ body {
     }
 
     &:hover &__icon {
-        transform: rotate(20deg);
+        transform: rotate(30deg);
     }
 }
 
@@ -63,5 +63,6 @@ body {
     grid-row: 3 / 4;
     grid-column: main-start / main-end;
 
-    background-color: $color-primary;
+    display: grid;
+    grid-row-gap: 2rem;
 }
