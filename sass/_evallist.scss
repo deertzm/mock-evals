@@ -1,9 +1,11 @@
 .eval-list {
+
     display: grid;
     grid-template-rows: minmax(2rem, max-content);
     justify-items: center;
     background-color: #FFF;
     box-shadow: 0 .3rem .6rem rgba(#000, .3);
+    border-radius: 3px;
 }
 
 .el-header {
@@ -15,6 +17,7 @@
     width: 100%;
     background-color: $color-primary;
     color: $color-secondary-dark-1;
+    border-radius: 3px 3px 0 0;
 
     &__checkbox {
         grid-column: check-start / check-end;
@@ -45,22 +48,34 @@
         height: 3rem;
         width: 3rem;
         fill: $color-secondary-dark-1;
-        transition: all .2s;
+        transition: transform .2s;
         cursor: pointer;
+        margin-right: 1rem;
+        transform: rotate(0deg);
 
         &:hover {
             fill: $color-secondary;
         }
 
-        &:active {
+        &--more {
             transform: rotate(180deg);
+            height: 3rem;
+            width: 3rem;
+            fill: $color-secondary-dark-1;
+            cursor: pointer;
+            margin-right: 1rem;
+            transition: transform .2s;
+
+            &:hover {
+                fill: $color-secondary;
+            }
         }
     }
 }
 
 .el-row {
     display: grid;
-    grid-template-columns: [check-start] minmax(3.5rem, max-content) [check-end name-start] minmax(20rem, 1fr) [name-end pct-start] 20rem [pct-end open-start] 7rem [open-end print-start] 7rem [print-end date-start] 15rem [date-end];
+    grid-template-columns: [check-start] 3.5rem [check-end name-start] minmax(20rem, 1fr) [name-end pct-start] 5rem [pct-end bar-start] 20rem [bar-end check-start] 3rem [check-end open-start] 7rem [open-end print-start] 7rem [print-end date-start] 15rem [date-end];
     align-items: center;
     justify-items: center;
     align-content: center;
@@ -90,12 +105,35 @@
         font-size: 1.8rem;
         justify-self: start;
         font-weight: 400;
+        padding: .2rem 0;
     }
 
     &__pct {
         grid-column: pct-start / pct-end;
+        justify-self: end;
 
         font-size: 1.6rem;
+    }
+
+    &__bar {
+        grid-column: bar-start / bar-end;
+        width: 90%;
+        height: 60%;
+        border: none;
+        border-radius: 3px;
+        background-color: $color-secondary-light-3;
+
+        &::-webkit-progress-bar {
+            background-color: $color-secondary-light-3;
+        }
+    }
+
+    &__check {
+        grid: check-start / check-end;
+
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: #0A0;
     }
 
     &__open {
@@ -105,11 +143,13 @@
         cursor: pointer;
         text-transform: uppercase;
         background-color: $color-primary;
-        padding: .4rem .9rem;
-        margin: .5rem 0;
+        padding: .3rem .9rem;
+        margin: .3rem 0;
         border-radius: 3px;
         transition: all .2s;
         display: none;
+        color: currentColor;
+        outline: none;
 
         &:hover {
             transform: translateY(-1px);
@@ -137,11 +177,13 @@
         cursor: pointer;
         text-transform: uppercase;
         background-color: $color-primary;
-        padding: .4rem .9rem;
-        margin: .5rem 0;
+        padding: .3rem .9rem;
+        margin: .3rem 0;
         border-radius: 3px;
         transition: all .2s;
         display: none;
+        color: currentColor;
+        outline: none;
 
         &:hover {
             transform: translateY(-1px);
@@ -166,21 +208,134 @@
         grid-column: date-start / date-end;
 
         font-size: 1.6rem;
-    }
-
-    &--active {
-        //background-color: $color-secondary-light-3;
+        display: none;
     }
 
     &:hover {
         background-color: $color-secondary-light-4;
     }
 
-    &:hover &__open {
+    &:hover &__open,
+    &:hover &__print,
+    &:hover &__date {
         display: block;
     }
+}
 
-    &:hover &__print {
-        display: block;
+.content-open {
+    display: block;
+}
+
+.content-close {
+    display: none;
+}
+
+.bar--10 {
+    &::-moz-progress-bar {
+        background-color: #FF0000;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #FF0000;
+    }
+}
+
+.bar--20 {
+    &::-moz-progress-bar {
+        background-color: #FF2300;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #FF2300;
+    }
+}
+
+.bar--30 {
+    &::-moz-progress-bar {
+        background-color: #FF5700;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #FF5700;
+    }
+}
+
+.bar--40 {
+    &::-moz-progress-bar {
+        background-color: #FF8C00;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #FF8C00;
+    }
+}
+
+.bar--50 {
+    &::-moz-progress-bar {
+        background-color: #FFC100;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #FFC100;
+    }
+}
+
+.bar--60 {
+    &::-moz-progress-bar {
+        background-color: #FFF600;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #FFF600;
+    }
+}
+
+.bar--70 {
+    &::-moz-progress-bar {
+        background-color: #D4FF00;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #D4FF00;
+    }
+}
+
+.bar--80 {
+    &::-moz-progress-bar {
+        background-color: #9FFF00;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #9FFF00;
+    }
+}
+
+.bar--90 {
+    &::-moz-progress-bar {
+        background-color: #6AFF00;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #6AFF00;
+    }
+}
+
+.bar--100 {
+    &::-moz-progress-bar {
+        background-color: #35FF00;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #35FF00;
+    }
+}
+
+.bar--complete {
+    &::-moz-progress-bar {
+        background-color: #0A0;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #0A0;
     }
 }

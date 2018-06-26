@@ -1,52 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>Employee Evaluations</title>
-    </head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
-    <body class="container">
-        <div class="nti-header">
-            <svg class="nti-header__logo">
+    <title>Employee Evaluations</title>
+</head>
+
+<body class="container">
+    <div class="nti-header">
+        <svg class="nti-header__logo">
                 <use href="img/ntilogosprite.svg#icon-ntilogo" ></use>
             </svg>
 
-            <div class="nti-header__user">User Name</div>
-            <button class="nti-header__login">Log Out</button>
-        </div>
+        <div class="nti-header__user">User Name</div>
+        <button class="nti-header__login">Log Out</button>
+    </div>
 
-        <button class="settings">
+    <button class="settings">
             <svg class="settings__icon">
                 <use href="img/evals-sprite.svg#icon-settings" ></use>
             </svg>
         </button>
 
-        <div class="content">
-            <div class="eval-list">
-                <div class="el-header">
-                    <div class="el-header__checkbox"></div>
-                    <div class="el-header__title">Production</div>
-                    <svg class="el-header__shade">
+    <div class="content">
+        <div class="eval-list">
+            <div class="el-header">
+                <div class="el-header__checkbox"></div>
+                <div class="el-header__title">Production</div>
+                <svg class="el-header__shade" id="production-shade">
                         <use href="img/evals-sprite.svg#icon-expand_less" ></use>
                     </svg>
+            </div>
+
+            <div class="content-open" id="production-content">
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Kathleen Miller</div>
+                    <span class="el-row__pct">50%</span>
+                    <progress class="bar--50 el-row__bar" max="100" value="50"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
                 </div>
 
                 <div class="el-row el-row--active">
                     <div class="el-row__checkbox"></div>
-                    <div class="el-row__name">Firstname Lastname1</div>
-                    <div class="el-row__pct">50%</div>
+                    <div class="el-row__name">Luis Guerrero</div>
+                    <span class="el-row__pct">20%</span>
+                    <progress class="bar--20 el-row__bar" max="100" value="20"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Brian Mclaughlin</div>
+                    <span class="el-row__pct">0%</span>
+                    <progress class="el-row__bar" max="100" value="0"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Nichole Cohen</div>
+                    <span class="el-row__pct">100%</span>
+                    <progress class="bar--complete el-row__bar" max="100" value="100"></progress>
+                    <svg class="el-row__check">
+                        <use href="img/evals-sprite.svg#icon-done" ></use>
+                    </svg>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Eileen Lowe</div>
+                    <span class="el-row__pct">10%</span>
+                    <progress class="bar--10 el-row__bar" max="100" value="10"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Isaac Lopez</div>
+                    <span class="el-row__pct">80%</span>
+                    <progress class="bar--80 el-row__bar" max="100" value="80"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Andrea Douglas</div>
+                    <span class="el-row__pct">0%</span>
+                    <progress class="bar--0 el-row__bar" max="100" value="0"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Sarah Tate</div>
+                    <span class="el-row__pct">60%</span>
+                    <progress class="bar--60 el-row__bar" max="100" value="60"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Ricky Gibson</div>
+                    <span class="el-row__pct">0%</span>
+                    <progress class="bar--0 el-row__bar" max="100" value="0"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Nora McCoy</div>
+                    <span class="el-row__pct">100%</span>
+                    <progress class="bar--complete el-row__bar" max="100" value="100"></progress>
+                    <svg class="el-row__check">
+                        <use href="img/evals-sprite.svg#icon-done" ></use>
+                    </svg>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Roger Rice</div>
+                    <span class="el-row__pct">0%</span>
+                    <progress class="bar--0 el-row__bar" max="100" value="0"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Virginia Johnson</div>
+                    <span class="el-row__pct">0%</span>
+                    <progress class="bar--0 el-row__bar" max="100" value="0"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Joel Mcquire</div>
+                    <span class="el-row__pct">100%</span>
+                    <progress class="bar--complete el-row__bar" max="100" value="100"></progress>
+                    <svg class="el-row__check">
+                        <use href="img/evals-sprite.svg#icon-done" ></use>
+                    </svg>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Kerry Norman</div>
+                    <span class="el-row__pct">90%</span>
+                    <progress class="bar--90 el-row__bar" max="100" value="90"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Stephen Manning</div>
+                    <span class="el-row__pct">0%</span>
+                    <progress class="bar--0 el-row__bar" max="100" value="0"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Fred Peterson</div>
+                    <span class="el-row__pct">70%</span>
+                    <progress class="bar--70 el-row__bar" max="100" value="70"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Flora Curtis</div>
+                    <span class="el-row__pct">30%</span>
+                    <progress class="bar--30 el-row__bar" max="100" value="30"></progress>
                     <button class="el-row__open">Open</button>
                     <button class="el-row__print">Print</button>
                     <div class="el-row__date">2018</div>
                 </div>
             </div>
         </div>
-    </body>
+
+
+
+        <div class="eval-list">
+            <div class="el-header">
+                <div class="el-header__checkbox"></div>
+                <div class="el-header__title">Quality</div>
+                <svg class="el-header__shade" id="quality-shade">
+                    <use href="img/evals-sprite.svg#icon-expand_less" ></use>
+                </svg>
+            </div>
+
+            <div class="content-open" id="quality-content">
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Elaine Davidson</div>
+                    <span class="el-row__pct">40%</span>
+                    <progress class="bar--40 el-row__bar" max="100" value="40"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Susan Watts</div>
+                    <span class="el-row__pct">0%</span>
+                    <progress class="bar--0 el-row__bar" max="100" value="0"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Alexis Munoz</div>
+                    <span class="el-row__pct">0%</span>
+                    <progress class="el-row__bar" max="100" value="0"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Henry Matthews</div>
+                    <span class="el-row__pct">60%</span>
+                    <progress class="bar--60 el-row__bar" max="100" value="60"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Joshua Wong</div>
+                    <span class="el-row__pct">100%</span>
+                    <progress class="bar--100 el-row__bar" max="100" value="100"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+
+                <div class="el-row el-row--active">
+                    <div class="el-row__checkbox"></div>
+                    <div class="el-row__name">Leslie Mason</div>
+                    <span class="el-row__pct">0%</span>
+                    <progress class="bar--0 el-row__bar" max="100" value="0"></progress>
+                    <button class="el-row__open">Open</button>
+                    <button class="el-row__print">Print</button>
+                    <div class="el-row__date">2018</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" ></script>
+</body>
 
 </html>

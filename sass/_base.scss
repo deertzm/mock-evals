@@ -41,10 +41,8 @@ body {
 .container {
     display: grid;
     grid-template-rows: 6rem max-content max-content;
-    grid-template-columns: [left-start] 4rem [left-end] 1fr [main-start] minmax(80rem, 1fr) [main-end] 1fr [right-start] 4rem [right-end];
+    grid-template-columns: [left-start] 4rem [left-end] 1fr [main-start] minmax(82rem, 1fr) [main-end] 1fr [right-start] 4rem [right-end];
     grid-row-gap: .4rem;
-    //align-items: center;
-    //justify-items: center;
 }
 
 .settings {
@@ -56,6 +54,13 @@ body {
     border: 0;
     background-color: transparent;
     cursor: pointer;
+    outline: none;
+
+    &:focus,
+    &::-moz-focus-inner {
+        border: 0;
+        outline: none;
+    }
 
     &__icon {
         height: 3rem;

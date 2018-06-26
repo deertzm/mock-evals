@@ -44,6 +44,7 @@
         padding: .6rem 1.6rem;
         border-radius: 3px;
         transition: all .2s;
+        outline: none;
 
         &:hover {
             transform: translateY(-1px);
@@ -54,6 +55,7 @@
             background-color: $color-primary-dark-1;
             transform: translateY(1px);
             outline: none;
+            border: 0;
             box-shadow: 0 .5rem 1rem rgba(#000, .2);
         }
 
